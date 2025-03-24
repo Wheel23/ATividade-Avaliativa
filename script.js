@@ -59,10 +59,8 @@ class Cobra extends Entidade {
            this.y < comida.y + comida.altura &&
            this.y + this.altura > comida.y
        ){ 
-           this.#houveColisao(comida)
-           this.pontuacao()
-          
-           
+            this.#houveColisao(comida)
+            
        }
    }
    #houveColisao(comida){
@@ -100,7 +98,7 @@ class Comida extends Entidade {
 function pontuacao(){
         ctx.fillStyle='black'
         ctx.font = '20px Arial Bold'
-        ctx.fillText('Pontuação',(canvas.width/2) -400,(canvas.height/2) -150, 400, 100 )
+        ctx.fillText((canvas.width/2) -400,(canvas.height/2) -140, 400, 100 )
         
     
 }
