@@ -53,7 +53,7 @@ class Cobra extends Entidade {
    }
 
    verificarColisao(comida){
-       valor = 0
+       
        if(
            this.x < comida.x + comida.largura &&
            this.x + this.largura > comida.x &&
@@ -61,7 +61,7 @@ class Cobra extends Entidade {
            this.y + this.altura > comida.y
        ){ 
             this.#houveColisao(comida)
-            valor + 1
+           
        }
    }
    #houveColisao(comida){
@@ -71,9 +71,23 @@ class Cobra extends Entidade {
    verificarColidion(){
     if(cobra.x > canvas.width || cobra.y > canvas.height || cobra.y> canvas.width 
     || cobra.x < canvas.width -800 || cobra.y < canvas.height -400){
-    console.log('Funcionou')
-       alert('Você Perdeu!')
+       this.houveColidion()
+       
     }
+   }
+   houveColidion(){
+    teclasPressionadas.KeyA = false
+    teclasPressionadas.KeyW = false
+    teclasPressionadas.KeyD = false
+    teclasPressionadas.KeyS = false
+    ctx.fillStyle = 'red'
+    ctx.fillRect((canvas.width/2) -200,(canvas.height/2)-50, 400, 100)
+    ctx.fillStyle='black'
+    ctx.font = '50px Arial Bold'
+    ctx.fillText('GAME OVER',(canvas.width/2) -150,(canvas.height/2) +0, 400, 100 )
+    alert('Você Perdeu')
+
+
    }
 
    
