@@ -50,8 +50,9 @@ class Cobra extends Entidade {
            this.x += 7
        }
    }
-   verificarColisao(comida, valor){
-        valor = 0
+
+   verificarColisao(comida){
+       
        if(
            this.x < comida.x + comida.largura &&
            this.x + this.largura > comida.x &&
@@ -59,7 +60,7 @@ class Cobra extends Entidade {
            this.y + this.altura > comida.y
        ){ 
            this.#houveColisao(comida)
-           console.log(valor + 1)
+           this.pontuacao()
           
            
        }
@@ -85,6 +86,7 @@ class Cobra extends Entidade {
     ctx.fillStyle='black'
     ctx.font = '50px Arial Bold'
     ctx.fillText('GAME OVER',(canvas.width/2) -150,(canvas.height/2) +0, 400, 100 )
+
    }
 
    
